@@ -89,65 +89,65 @@ function App() {
  
 
   return (
- <div className="container ">
-  <div className="flex justify-center items-center mt-5">
-  <form onSubmit={submitData}  className="w-[50%] mx-auto max-w-lg">
-  <div className="flex flex-wrap -mx-3 mb-6">
-    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-        First Name
-      </label>
-      <input value={values.fname} name="fname" onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Jane"/>
-     {errors.fname &&  <p className="text-red-500 text-xs italic">{errors.fname}.</p>}
+    <div className="container ">
+    <div className="flex justify-center items-center mt-5">
+    <form onSubmit={submitData}  className="w-[50%] mx-auto max-w-lg">
+    <div className="flex flex-wrap -mx-3 mb-6">
+      <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+          First Name
+        </label>
+        <input value={values.fname} name="fname" onChange={handleChange} className={`${errors.fname && "border-red-500"} appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}  type="text" placeholder="Jane"/>
+       {errors.fname &&  <p className="text-red-500 text-xs italic">{errors.fname}.</p>}
+      </div>
+      <div className="w-full md:w-1/2 px-3">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+          Last Name
+        </label>
+        <input  value={values.lname} name="lname" onChange={handleChange} className={`${errors.lname && "border-red-500"} appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}  type="text" placeholder="Doe"/>
+        {errors.lname &&  <p className="text-red-500 text-xs italic">{errors.lname}.</p>}
+      </div>
     </div>
-    <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-        Last Name
-      </label>
-      <input  value={values.lname} name="lname" onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Doe"/>
-      {errors.lname &&  <p className="text-red-500 text-xs italic">{errors.lname}.</p>}
+    <div className="flex flex-wrap -mx-3 mb-6">
+      <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+          Email
+        </label>
+        <input  value={values.email} name="email" onChange={handleChange} className={`${errors.email && "border-red-500"} appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}  type="text" placeholder="Email.."/>
+        {errors.email &&  <p className="text-red-500 text-xs italic">{errors.email}.</p>}
+      </div>
+      <div className="w-full md:w-1/2 px-3">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+        Phone Number
+        </label>
+        <input  value={values.phoneNumber} name="phoneNumber" onChange={handleChange} className={`${errors.phoneNumber && "border-red-500"} appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}  type="text" placeholder="Phone Number"/>
+        {errors.phoneNumber &&  <p className="text-red-500 text-xs italic">{errors.phoneNumber}.</p>}
+      </div>
     </div>
-  </div>
-  <div className="flex flex-wrap -mx-3 mb-6">
-    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-        Email
-      </label>
-      <input  value={values.email} name="email" onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"  type="text" placeholder="Email.."/>
-      {errors.email &&  <p className="text-red-500 text-xs italic">{errors.email}.</p>}
+    <div className="flex flex-wrap -mx-3 mb-6">
+      <div className="w-full px-3">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          Password
+        </label>
+        <input value={values.password} name="password" onChange={handleChange} className={`${errors.password && "border-red-500"} appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}  type="password" placeholder="******************"/>
+        {errors.password &&  <p className="text-red-500 text-xs italic">{errors.password}.</p>}
+      </div>
+      <div className="w-full px-3">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+          Confirm Password
+        </label>
+        <input  value={values.confirmPassword} name="confirmPassword" onChange={handleChange} className={`${errors.confirmPassword && "border-red-500"} appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white`}  type="password" placeholder="******************"/>
+        {errors.confirmPassword &&  <p className="text-red-500 text-xs italic">{errors.confirmPassword}.</p>}
+      </div>
     </div>
-    <div className="w-full md:w-1/2 px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-      Phone Number
-      </label>
-      <input  value={values.phoneNumber} name="phoneNumber" onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="text" placeholder="Phone Number"/>
-      {errors.phoneNumber &&  <p className="text-red-500 text-xs italic">{errors.phoneNumber}.</p>}
-    </div>
-  </div>
-  <div className="flex flex-wrap -mx-3 mb-6">
-    <div className="w-full px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-        Password
-      </label>
-      <input value={values.password} name="password" onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="password" placeholder="******************"/>
-      {errors.password &&  <p className="text-red-500 text-xs italic">{errors.password}.</p>}
-    </div>
-    <div className="w-full px-3">
-      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-        Confirm Password
-      </label>
-      <input  value={values.confirmPassword} name="confirmPassword" onChange={handleChange} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"  type="password" placeholder="******************"/>
-      {errors.confirmPassword &&  <p className="text-red-500 text-xs italic">{errors.confirmPassword}.</p>}
-    </div>
-  </div>
-  <input type="submit" className= " text-center  cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded w-full" value="Submit"/>
-
-
-</form>
-  </div>
+    <input type="submit" className= " text-center  cursor-pointer bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded w-full" value="Submit"/>
   
-
- </div>
+  
+  </form>
+    </div>
+    
+  
+   </div>
 
   );
 }
